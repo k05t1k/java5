@@ -5,15 +5,17 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         Employee employee = new Employee("Заводчанин Великий");
-        employee.printName();
+        System.out.println(employee.getName());
 
         Product product = new Product("Спички высококачественные");
-        product.printName();
+        System.out.println(product.getName());
 
         employee.raiseSalary(50000, 2);
         System.out.println(product.calculateDiscountedPrice(100, 5));
         System.out.println(product.sum(10, 2));
         System.out.println(product.calculateProductionCapacity(10, 2));
+        System.out.println(employee.getSalary());
+        System.out.println(product.getPrice());
 
         String jsonData = JsonFormatter.formatToJson("Hello, world!");
         System.out.println("Формат JSON: " + jsonData);
@@ -54,10 +56,6 @@ class Employee {
         this.name = name;
     }
 
-    public void printName() {
-        System.out.println("Имя сотрудника: " + name);
-    }
-
     public void raiseSalary(double salary, double cooficent) {
         this.salary = salary + (salary * cooficent);
         System.out.println("Мы повысили вашу зарплату в " + cooficent + " раз. Ваша новая зарплата: " + this.salary);
@@ -86,10 +84,6 @@ class Product {
 
     public Product(String name) {
         this.name = name;
-    }
-
-    public void printName() {
-        System.out.println("Название продукта: " + name);
     }
 
     public double calculateDiscountedPrice(double originalPrice, double discountPercentage) {
