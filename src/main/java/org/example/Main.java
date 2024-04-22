@@ -31,6 +31,22 @@ public class Main {
 }
 
 class Employee {
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public double getSalary() {
+        return salary;
+    }
+
+    public void setSalary(double salary) {
+        this.salary = salary;
+    }
+
     private String name;
     private double salary;
 
@@ -51,6 +67,22 @@ class Employee {
 class Product {
     private String name;
     private double price;
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public double getPrice() {
+        return price;
+    }
+
+    public void setPrice(double price) {
+        this.price = price;
+    }
 
     public Product(String name) {
         this.name = name;
